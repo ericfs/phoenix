@@ -12,6 +12,8 @@ function setAnchor ( x, y, window = Window.focused () ) {
   const screen = window.screen (),
         frame = screen.flippedFrame (),
         wFrame = window.frame ();
+  Phoenix.log('x', x, 'y', y);
+  Phoenix.log(JSON.stringify(frame), JSON.stringify(wFrame));
 
   const nextFrame = {
     x: x === 0 ? 0 : ( x === 1 ? frame.width - wFrame.width : wFrame.x ),
@@ -19,6 +21,7 @@ function setAnchor ( x, y, window = Window.focused () ) {
     width: wFrame.width,
     height: wFrame.height
   };
+  Phoenix.log(JSON.stringify(nextFrame));
 
   if ( _.isEqual ( frame, nextFrame ) ) return;
 

@@ -51,18 +51,18 @@ require ( './shortcuts/sixths.js' );
 require ( './shortcuts/split_view.js' );
 require ( './shortcuts/thirds.js' );
 
-require ( './mouse/snapping.js' );
+// require ( './mouse/snapping.js' );
 
-require ( './magic/chrome.js' );
-require ( './magic/developer_tools.js' );
-require ( './magic/finder.js' );
-require ( './magic/hyper.js' );
-require ( './magic/iterm.js' );
-require ( './magic/terminal.js' );
-require ( './magic/vscode.js' );
+// require ( './magic/chrome.js' );
+// require ( './magic/developer_tools.js' );
+// require ( './magic/finder.js' );
+// require ( './magic/hyper.js' );
+// require ( './magic/iterm.js' );
+// require ( './magic/terminal.js' );
+// require ( './magic/vscode.js' );
 
-require ( './spaces/alfred.js' );
-require ( './spaces/list.js' );
+// require ( './spaces/alfred.js' );
+// require ( './spaces/list.js' );
 // require ( './spaces/overlay.js' );
 
 /* LOADED */

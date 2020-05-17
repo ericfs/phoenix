@@ -104,7 +104,7 @@ function callbackiTerm ( isNewWindow ) {
 
     if ( !focused ) return;
 
-    magiciTermOpen ( focused );
+    // magiciTermOpen ( focused );
 
   }, 600 );
 
