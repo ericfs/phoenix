@@ -15,7 +15,7 @@ class History {
   }
 
   constructor() {
-    this.stack_ = [];
+    this.stack_ = new FixedStack(HISTORY_DEPTH);
   }
 
   pushWindow(window) {
@@ -32,7 +32,6 @@ class History {
     }
     const {hash, frame} = this.stack_.pop();
     const window = Window.recent().find((w) => w.hash() == hash);
-    Phoenix.log(JSON.stringify(frame));
     if (window) {
       return {window, frame};
     } else {
@@ -41,6 +40,45 @@ class History {
   }
 }
 
+class FixedStack {
+  constructor(maxCapacity) {
+    this.array_ = new Array(maxCapacity + 1);
+    this.bottom_ = 0;
+    this.next_ = 0;
+  }
+
+  push(x) {
+    this.array_[this.next_] = x;
+    this.next_ = this.modLength(this.next_ + 1);
+    if (this.next_ == this.bottom_) {
+      this.array_[this.bottom_] = undefined;
+      this.bottom_ = this.modLength(this.bottom_ + 1);
+    }
+  }
+
+  pop() {
+    if (this.bottom_ == this.next_) {
+      // Stack is empty
+      return undefined;
+    }
+
+    this.next_ = this.modLength(this.next_ - 1);
+    const val = this.array_[this.next_];
+    this.array_[this.next_] = undefined;
+    return val;
+  }
+
+  modLength(x) {
+    const n = this.array_.length;
+    return ((x % n) + n) % n;
+  }
+
+  get length() {
+    return this.modLength(this.next_ - this.bottom_);
+  }
+}
+
 exports.History = History;
+exports.FixedStack = FixedStack;
 
 })(globalThis);
