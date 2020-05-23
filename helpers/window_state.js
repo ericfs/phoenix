@@ -9,7 +9,7 @@ function init() {
     updateWindowState(window);
   }
 
-  Event.on('windowDidOpen', updateWindowState);
+  Event.on('windowDidOpen', updateWindowStateHandler);
   Event.on('windowDidClose', removeWindowState);
   Event.on('windowDidMove', updateWindowStateAndPush);
   Event.on('windowDidResize', updateWindowStateAndPush);
@@ -18,7 +18,7 @@ function init() {
 /**
  * Gets the last known window state, if there is one.
  */
-const getLastWindowState = function(window) {
+function getLastWindowState(window) {
   if (!allWindows[window.hash()]) {
     return undefined;
   }
@@ -29,7 +29,7 @@ const getLastWindowState = function(window) {
   return new FrozenWindow(window.hash(), savedFrame);
 };
 
-const updateWindowState = function(window, frame = window.frame()) {
+function updateWindowState(window, frame = window.frame()) {
   // Round all stored values since fractional values are not used by
   // real windows.
   for (const key in frame) {
@@ -37,6 +37,10 @@ const updateWindowState = function(window, frame = window.frame()) {
   }
   allWindows[window.hash()] = frame;
 };
+
+function updateWindowStateHandler(window) {
+  updateWindowState(window);
+}
 
 const removeWindowState = function(window) {
   delete allWindows[window.hash()];
