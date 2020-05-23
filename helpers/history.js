@@ -17,7 +17,6 @@ class History {
   }
 
   pushWindow(window) {
-    debugger;
     this.stack_.push({
       hash: window.hash(),
       frame: window.frame(),

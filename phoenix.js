@@ -6,17 +6,14 @@ require ( './config/constants.js' );
 
 require ( './helpers/alert.js' );
 require ( './helpers/center_window.js' );
-require ( './helpers/detect_named_anchor.js' );
 require ( './helpers/find_window.js' );
 require ( './helpers/focus_window.js' );
-require ( './helpers/get_named_anchor.js' );
 require ( './helpers/get_named_frame.js' );
 require ( './helpers/get_space_index.js' );
 require ( './helpers/get_space_name.js' );
 require ( './helpers/grow_frame.js' );
 require ( './helpers/history.js' );
 require ( './helpers/index2keycode.js' );
-require ( './helpers/is_anchored.js' );
 require ( './helpers/log.js' );
 require ( './helpers/modal.js' );
 require ( './helpers/modal_screen.js' );
@@ -24,7 +21,6 @@ require ( './helpers/modal_window.js' );
 require ( './helpers/osascript.js' );
 require ( './helpers/read_file.js' );
 require ( './helpers/read_json.js' );
-require ( './helpers/set_anchor.js' );
 require ( './helpers/set_event_handler.js' );
 require ( './helpers/set_events_handler.js' );
 require ( './helpers/set_frame.js' );
@@ -53,8 +49,6 @@ require ( './shortcuts/split_view.js' );
 require ( './shortcuts/thirds.js' );
 require ( './shortcuts/undo.js' );
 
-// require ( './mouse/snapping.js' );
-
 // require ( './magic/chrome.js' );
 // require ( './magic/developer_tools.js' );
 // require ( './magic/finder.js' );
@@ -62,6 +56,7 @@ require ( './shortcuts/undo.js' );
 // require ( './magic/iterm.js' );
 // require ( './magic/terminal.js' );
 // require ( './magic/vscode.js' );
+// require ( './magic/push_move.js' );
 
 // require ( './spaces/alfred.js' );
 // require ( './spaces/list.js' );
