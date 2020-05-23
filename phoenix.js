@@ -14,6 +14,7 @@ require ( './helpers/get_named_frame.js' );
 require ( './helpers/get_space_index.js' );
 require ( './helpers/get_space_name.js' );
 require ( './helpers/grow_frame.js' );
+require ( './helpers/history.js' );
 require ( './helpers/index2keycode.js' );
 require ( './helpers/is_anchored.js' );
 require ( './helpers/log.js' );
@@ -50,6 +51,7 @@ require ( './shortcuts/spaces.js' );
 require ( './shortcuts/sixths.js' );
 require ( './shortcuts/split_view.js' );
 require ( './shortcuts/thirds.js' );
+require ( './shortcuts/undo.js' );
 
 // require ( './mouse/snapping.js' );
 
@@ -67,4 +69,8 @@ require ( './shortcuts/thirds.js' );
 
 /* LOADED */
 
-modalScreen ({ icon: App.get ( 'Phoenix' ).icon () });
+let phoenixApp = App.get('Phoenix');
+if (!phoenixApp) {
+  phoenixApp = App.get('Phoenix (Debug)');
+}
+modalScreen ({ icon: phoenixApp.icon () });

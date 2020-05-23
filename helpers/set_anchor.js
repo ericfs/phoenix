@@ -19,10 +19,10 @@ function setAnchor ( x, y, window = Window.focused () ) {
     width: wFrame.width,
     height: wFrame.height
   };
-  Phoenix.log(JSON.stringify(nextFrame));
 
   if ( _.isEqual ( frame, nextFrame ) ) return;
 
+  History.get().pushWindow(window);
   window.setFrame ( nextFrame );
 
 }
