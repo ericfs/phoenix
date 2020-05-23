@@ -19,8 +19,6 @@ require ( './helpers/modal.js' );
 require ( './helpers/modal_screen.js' );
 require ( './helpers/modal_window.js' );
 require ( './helpers/osascript.js' );
-require ( './helpers/read_file.js' );
-require ( './helpers/read_json.js' );
 require ( './helpers/set_event_handler.js' );
 require ( './helpers/set_events_handler.js' );
 require ( './helpers/set_frame.js' );
@@ -28,8 +26,6 @@ require ( './helpers/set_key_handler.js' );
 require ( './helpers/set_keys_handler.js' );
 require ( './helpers/shell.js' );
 require ( './helpers/switch_space.js' );
-require ( './helpers/write_file.js' );
-require ( './helpers/write_json.js' );
 
 require ( './shortcuts/center.js' );
 require ( './shortcuts/corners.js' );
