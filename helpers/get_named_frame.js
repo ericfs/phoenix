@@ -1,38 +1,34 @@
+((g) => {
 
-/* GET NAMED FRAME */
+const dTop = ( TOP_HEIGHT_PERCENTAGE - 50 ) / 100;
+const dLeft = ( LEFT_WIDTH_PERCENTAGE - 50 ) / 100;
 
-function getNamedFrame ( name ) {
 
-  const dTop = ( TOP_HEIGHT_PERCENTAGE - 50 ) / 100,
-        dLeft = ( LEFT_WIDTH_PERCENTAGE - 50 ) / 100;
-
-  switch ( name ) {
+g.WindowPosition = {
     /* SIDES */
-    case 'top': return [0, 0, 1, .5 + dTop];
-    case 'right': return [.5 + dLeft, 0, .5 - dLeft, 1];
-    case 'bottom': return [0, .5 + dTop, 1, .5 - dTop];
-    case 'left': return [0, 0, .5 + dLeft, 1];
+    TOP: {x:0, y:0, width:1, height:.5 + dTop},
+    RIGHT: {x:.5 + dLeft, y:0, width:.5 - dLeft, height:1},
+    BOTTOM: {x:0, y:.5 + dTop, width:1, height:.5 - dTop},
+    LEFT: {x:0, y:0, width:.5 + dLeft, height:1},
     /* CORNERS */
-    case 'top-left': return [0, 0, .5 + dLeft, .5 + dTop];
-    case 'top-right': return [.5 + dLeft, 0, .5 - dLeft, .5 + dTop];
-    case 'bottom-right': return [.5 + dLeft, .5 + dTop, .5 - dLeft, .5 - dTop];
-    case 'bottom-left': return [0, .5 + dTop, .5 + dLeft, .5 - dTop];
+    TOP_LEFT: {x:0, y:0, width:.5 + dLeft, height:.5 + dTop},
+    TOP_RIGHT: {x:.5 + dLeft, y:0, width:.5 - dLeft, height:.5 + dTop},
+    BOTTOM_RIGHT: {x:.5 + dLeft, y:.5 + dTop, width:.5 - dLeft, height:.5 - dTop},
+    BOTTOM_LEFT: {x:0, y:.5 + dTop, width:.5 + dLeft, height:.5 - dTop},
     /* HALVES */
-    case 'half-1': return [0/2, 0, 1/2, 1];
-    case 'half-2': return [1/2, 0, 1/2, 1];
+    HALF_LEFT: {x:0/2, y:0, width:1/2, height:1},
+    HALF_RIGHT: {x:1/2, y:0, width:1/2, height:1},
     /* THIRDS */
-    case 'third-1': return [0/3, 0, 1/3, 1];
-    case 'third-2': return [1/3, 0, 1/3, 1];
-    case 'third-3': return [2/3, 0, 1/3, 1];
+    THIRD_LEFT: {x:0/3, y:0, width:1/3, height:1},
+    THIRD_MIDDLE: {x:1/3, y:0, width:1/3, height:1},
+    THIRD_RIGHT: {x:2/3, y:0, width:1/3, height:1},
     /* SIXTHS */
-    case 'sixths-1': return [0/3, 0, 1/3, 1/2];
-    case 'sixths-2': return [1/3, 0, 1/3, 1/2];
-    case 'sixths-3': return [2/3, 0, 1/3, 1/2];
-    case 'sixths-4': return [0/3, 1/2, 1/3, 1/2];
-    case 'sixths-5': return [1/3, 1/2, 1/3, 1/2];
-    case 'sixths-6': return [2/3, 1/2, 1/3, 1/2];
-    /* DEFAULT */
-    default: throw new Error ( `Undefined frame named: "${name}"` );
-  }
+    SIXTHS_TOP_LEFT: {x:0/3, y:0, width:1/3, height:1/2},
+    SIXTHS_TOP_MIDDLE: {x:1/3, y:0, width:1/3, height:1/2},
+    SIXTHS_TOP_RIGHT: {x:2/3, y:0, width:1/3, height:1/2},
+    SIXTHS_BOTTOM_LEFT: {x:0/3, y:1/2, width:1/3, height:1/2},
+    SIXTHS_BOTTOM_MIDDLE: {x:1/3, y:1/2, width:1/3, height:1/2},
+    SIXTHS_BOTTOM_RIGHT: {x:2/3, y:1/2, width:1/3, height:1/2},
+};
 
-}
+})(globalThis);

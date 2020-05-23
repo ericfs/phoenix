@@ -2,8 +2,8 @@
 /* HALVES */
 
 const halves = [
-  ['[', HYPER, ['half-1']],
-  [']', HYPER, ['half-2']]
+  ['[', HYPER, [WindowPosition.HALF_LEFT]],
+  [']', HYPER, [WindowPosition.HALF_RIGHT]]
 ];
 
 setKeysHandler ( setFrame, halves );

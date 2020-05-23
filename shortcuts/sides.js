@@ -2,10 +2,10 @@
 /* SIDES */
 
 const sides = [
-  ['up', HYPER, ['top']],
-  ['right', HYPER, ['right']],
-  ['down', HYPER, ['bottom']],
-  ['left', HYPER, ['left']]
+  ['up', HYPER, [WindowPosition.TOP]],
+  ['right', HYPER, [WindowPosition.RIGHT]],
+  ['down', HYPER, [WindowPosition.BOTTOM]],
+  ['left', HYPER, [WindowPosition.LEFT]]
 ];
 
 setKeysHandler ( setFrame, sides );

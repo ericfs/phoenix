@@ -2,9 +2,9 @@
 /* THIRDS */
 
 const thirds = [
-  [1, HYPER, ['third-1']],
-  [2, HYPER, ['third-2']],
-  [3, HYPER, ['third-3']]
+  [1, HYPER, [WindowPosition.THIRD_LEFT]],
+  [2, HYPER, [WindowPosition.THIRD_MIDDLE]],
+  [3, HYPER, [WindowPosition.THIRD_RIGHT]]
 ];
 
 setKeysHandler ( setFrame, thirds );
