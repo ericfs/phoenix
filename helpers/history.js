@@ -1,3 +1,5 @@
+((exports) => {
+
 /**
  * Manages window change history.
  */
@@ -21,7 +23,6 @@ class History {
       hash: window.hash(),
       frame: window.frame(),
     });
-    Phoenix.log(JSON.stringify(this.stack_));
     window.frame();
   }
 
@@ -39,3 +40,7 @@ class History {
     }
   }
 }
+
+exports.History = History;
+
+})(globalThis);

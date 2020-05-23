@@ -26,6 +26,7 @@ require ( './helpers/set_key_handler.js' );
 require ( './helpers/set_keys_handler.js' );
 require ( './helpers/shell.js' );
 require ( './helpers/switch_space.js' );
+require ( './helpers/window_state.js');
 
 require ( './shortcuts/center.js' );
 require ( './shortcuts/corners.js' );
@@ -52,7 +53,6 @@ require ( './shortcuts/undo.js' );
 // require ( './magic/iterm.js' );
 // require ( './magic/terminal.js' );
 // require ( './magic/vscode.js' );
-// require ( './magic/push_move.js' );
 
 // require ( './spaces/alfred.js' );
 // require ( './spaces/list.js' );
