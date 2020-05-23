@@ -6,7 +6,6 @@ function setFrame ( x, y, width, height, window = Window.focused () ) {
   if ( _.isString ( x ) ) {
 
     setFrame ( ...getNamedFrame ( x ), y || window );
-    setAnchor ( ...getNamedAnchor ( x ), y || window );
 
   } else {
 
