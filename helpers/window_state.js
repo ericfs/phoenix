@@ -43,7 +43,7 @@ const updateWindowStateAndPush = function(window) {
   updateWindowState(window);
 
   // If there is no change, do nothing
-  if (previousWindowState &&
+  if (!previousWindowState ||
       _.isEqual(previousWindowState.frame(), window.frame())) {
     return;
   }
