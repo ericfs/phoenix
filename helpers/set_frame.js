@@ -24,8 +24,11 @@ function setFrame ( ratioFrame, window = Window.focused () ) {
 // already applied.
 Window.prototype.nativeSetFrame = Window.prototype.setFrame;
 Window.prototype.setFrame = function(frame) {
-  windowState.updateWindowState(this, frame);
   this.nativeSetFrame(frame);
+  // Record the newly set window dimensions. The values read from the window
+  // may be rounded or otherwise different from the requested values.
+  // This will be updated before the async window resize event.
+  windowState.updateWindowState(this);
 };
 
 exports.setFrame = setFrame;
