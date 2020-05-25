@@ -78,7 +78,7 @@ class FrozenWindow {
     this.title_ = window.title();
     this.frame_ = frame;
     this.app_ = {
-      name_: window.app().name(),2
+      name_: window.app().name(),
       name: () => this.app_.name_
     };
   }
