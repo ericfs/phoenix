@@ -26,7 +26,7 @@ function getLastWindowState(window) {
   // Find the last recorded frame.
   const savedFrame = allWindows[window.hash()];
 
-  return new FrozenWindow(window.hash(), savedFrame);
+  return new FrozenWindow(window, savedFrame);
 }
 
 function updateWindowState(window) {
@@ -73,9 +73,14 @@ function cancelInProgressTimer() {
  * Partial duck-typed implementation of window to contain saved state.
  */
 class FrozenWindow {
-  constructor(hash, frame) {
-    this.hash_ = hash;
+  constructor(window, frame) {
+    this.hash_ = window.hash();
+    this.title_ = window.title();
     this.frame_ = frame;
+    this.app_ = {
+      name_: window.app().name(),2
+      name: () => this.app_.name_
+    };
   }
 
   hash() {
@@ -84,6 +89,14 @@ class FrozenWindow {
 
   frame() {
     return this.frame_;
+  }
+
+  title() {
+    return this.title_;
+  }
+
+  app() {
+    return this.app_;
   }
 }
 

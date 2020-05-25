@@ -20,6 +20,7 @@ class History {
 
   pushWindow(window) {
     this.stack_.push({
+      window,
       hash: window.hash(),
       frame: window.frame(),
     });
@@ -37,6 +38,18 @@ class History {
     } else {
       return {window: undefined, frame: undefined};
     }
+  }
+
+  debugString() {
+    const lines = [];
+    for (const stackFrame of this.stack_) {
+      const {window, frame} = stackFrame;
+      lines.push(`${window.app().name()} - ${window.title()}: ${JSON.stringify(frame)}`);
+    }
+    if (this.stack_.length == 0) {
+      lines.push('History empty');
+    }
+    return lines.join('\n');
   }
 }
 
@@ -76,9 +89,25 @@ class FixedStack {
   get length() {
     return this.modLength(this.next_ - this.bottom_);
   }
+
+  [Symbol.iterator]() {
+    let index = 0;
+
+    return {
+      next: () => {
+        if (index < this.length) {
+          return {
+            value: this.array_[this.modLength(index++ + this.bottom_)],
+            done: false
+          };
+        } else {
+          return {done: true};
+        }
+      }
+    };
+  }
 }
 
 exports.History = History;
-exports.FixedStack = FixedStack;
 
 })(globalThis);
