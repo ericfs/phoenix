@@ -54,4 +54,4 @@ setKeyHandler ( 'space', HYPER, () => {
 
   }
 
-});
+}, [], 'Fill Screen');

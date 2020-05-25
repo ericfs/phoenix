@@ -13,4 +13,4 @@ setKeyHandler ( 'i', HYPER, () => {
 
   });
 
-});
+}, [], 'Show Window Info');

@@ -3,4 +3,4 @@ setKeyHandler('z', HYPER, () => {
   if (window) {
     window.setFrame(frame);
   }
-});
+}, [], 'Undo');

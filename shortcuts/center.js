@@ -9,7 +9,7 @@ setKeyHandler ( 'x', HYPER, () => {
 
   center_window ( window );
 
-});
+}, [], 'Center');
 
 setKeyHandler ( 'x', HYPER_SHIFT, () => {
 
@@ -28,4 +28,4 @@ setKeyHandler ( 'x', HYPER_SHIFT, () => {
 
   center_window ( window );
 
-});
+}, [], 'Center and Resize');

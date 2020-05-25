@@ -29,8 +29,6 @@ function launchDevTools () {
 
 const launchVSC = () => Task.run ( '/usr/local/bin/code', ['-n'] );
 
-const launchHyper = () => Task.run ( '/usr/local/bin/hyper' );
-
 const launchiTerm = `
   if application "iTerm" is running then
     tell application "iTerm"
@@ -113,15 +111,33 @@ function callbackiTerm ( isNewWindow ) {
 /* FOCUS */
 
 const focus = [
-  ['`', HYPER, ['Notable']],
-  ['c', HYPER, ['Google Chrome', false, /^(?!Developer Tools)/, /Picture in Picture/, launchChrome]],
-  ['d', HYPER, ['Google Chrome', true, /(Developer Tools)|(chrome-devtools)/, /Picture in Picture/, launchDevTools]],
-  ['v', HYPER, ['Code', false, false, false, launchVSC]],
-  // ['t', HYPER, ['Terminal', false, false, false, launchTerminal, callbackTerminal]], //FIXME: Ugly, but since `windowDidOpen` won't trigger, at least now it will behave as expected
-  // ['t', HYPER, ['Hyper', false, false, false, launchHyper, callbackHyper]], //FIXME: Ugly, but since `windowDidOpen` won't trigger, at least now it will behave as expected
-  ['t', HYPER, ['iTerm', false, false, false, launchiTerm, callbackiTerm]], //FIXME: Ugly, but since `windowDidOpen` won't trigger, at least now it will behave as expected
-  ['f', HYPER, ['Finder', false, false, false, launchFinder]],
-  ['g', HYPER, ['Tower']]
+  [
+    'c', HYPER,
+    ['Google Chrome', false, /^(?!Developer Tools)/, /Picture in Picture/, launchChrome],
+    'Launch Chrome'
+  ],
+  [
+    'd', HYPER,
+    ['Google Chrome', true, /(Developer Tools)|(chrome-devtools)/, /Picture in Picture/, launchDevTools],
+    'Launch Chrome Dev Tools'
+  ],
+  [
+    'v', HYPER, ['Code', false, false, false, launchVSC],
+    'Launch Visual Studio Code'
+  ],
+  [
+    't', HYPER,
+    ['iTerm', false, false, false, launchiTerm, callbackiTerm],
+    'Launch iTerm'
+  ], //FIXME: Ugly, but since `windowDidOpen` won't trigger, at least now it will behave as expected
+  [
+    'f', HYPER, ['Finder', false, false, false, launchFinder],
+    'Focus Finder'
+  ],
 ];
 
 setKeysHandler ( focusWindow, focus );
+
+function setFocusHandlers() {
+  setKeysHandler ( focusWindow, focus );
+}

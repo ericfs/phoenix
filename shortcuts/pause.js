@@ -14,4 +14,7 @@ setKeyHandler ( 'f8', HYPER, () => {
 
   });
 
-});
+},
+[],
+'Pause App'
+);

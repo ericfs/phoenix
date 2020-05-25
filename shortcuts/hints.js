@@ -1,0 +1,1 @@
+setKeyHandler ('/', HYPER, () => hints.toggleHints(), [], 'Show Hints');

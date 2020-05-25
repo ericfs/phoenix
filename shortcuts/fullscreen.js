@@ -9,4 +9,4 @@ setKeyHandler ( 'space', HYPER_SHIFT, () => {
 
   window.setFullScreen ( !window.isFullScreen () );
 
-});
+}, [], 'Fullscreen');

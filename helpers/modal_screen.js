@@ -12,6 +12,6 @@ function modalScreen ( options, screen = Screen.main () ) {
     };
   };
 
-  modal ( options );
+  return modal ( options );
 
 }

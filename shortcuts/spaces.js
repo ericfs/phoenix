@@ -28,6 +28,6 @@ function moveWindowToSpace(spaceOffset) {
   nextSpace.addWindows([window]);
 }
 
-setKeyHandler( 'right', ['ctrl', 'cmd'], () => moveWindowToSpace(1));
+setKeyHandler( 'right', ['ctrl', 'cmd'], () => moveWindowToSpace(1), [], 'Move to Right Space');
 
-setKeyHandler( 'left', ['ctrl', 'cmd'], () => moveWindowToSpace(-1));
+setKeyHandler( 'left', ['ctrl', 'cmd'], () => moveWindowToSpace(-1), [], 'Move to Left Space');
