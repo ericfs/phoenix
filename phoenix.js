@@ -8,6 +8,7 @@ require ( './helpers/alert.js' );
 require ( './helpers/center_window.js' );
 require ( './helpers/find_window.js' );
 require ( './helpers/focus_window.js' );
+require ( './helpers/dismissable_modal.js' );
 require ( './helpers/get_named_frame.js' );
 require ( './helpers/get_space_index.js' );
 require ( './helpers/get_space_name.js' );
