@@ -30,6 +30,10 @@ function getLastWindowState(window) {
 }
 
 function updateWindowState(window) {
+  // Don't track non-normal windows
+  if (!window.isNormal()) {
+    return;
+  }
   allWindows[window.hash()] = window.frame();
 }
 
@@ -39,6 +43,9 @@ const removeWindowState = function(window) {
 
 let inProgressChange;
 const updateWindowStateAndPush = function(window) {
+  if (!window.isNormal()) {
+    return;
+  }
   const previousWindowState = getLastWindowState(window);
   updateWindowState(window);
 
