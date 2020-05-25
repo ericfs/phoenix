@@ -19,6 +19,7 @@ function growFrame ( x, y, width, height, window = Window.focused () ) {
   if ( width ) newFrame.width = Math.min ( x ? frame.x + frame.width : sFrame.width - frame.x, frame.width + ( width - ( Math.abs ( x ) - Math.abs ( frame.x - newFrame.x ) ) ) );
   if ( height ) newFrame.height = Math.min ( y ? frame.y + frame.height : sFrame.height - frame.y, frame.height + ( height - ( Math.abs ( y ) - Math.abs ( frame.y - newFrame.y ) ) ) );
 
+  History.get().pushWindow(window);
   window.setFrame ( newFrame );
 
 }
