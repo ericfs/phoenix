@@ -1,8 +1,9 @@
 
 /* KEYS */
 
-const HYPER = ['ctrl', 'cmd', 'shift'];
-const HYPER_SHIFT = ['ctrl', 'alt', 'shift'];
+const HYPER = ['ctrl', 'shift'];
+const HYPER_SHIFT = ['ctrl', 'cmd', 'shift'];
+const HYPER_ALT = ['ctrl', 'shift', 'alt'];
 const DOUBLE_KEY_INTERVAL = 250;
 
 /* OTHERS */
