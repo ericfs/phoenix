@@ -126,7 +126,7 @@ const focus = [
     'Launch Visual Studio Code'
   ],
   [
-    't', HYPER,
+    'i', HYPER,
     ['iTerm', false, false, false, launchiTerm, callbackiTerm],
     'Launch iTerm'
   ], //FIXME: Ugly, but since `windowDidOpen` won't trigger, at least now it will behave as expected
